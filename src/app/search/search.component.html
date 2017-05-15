@@ -1,6 +1,23 @@
-<app-navbar></app-navbar>
-<app-albums [albums]="searchResult?.albums"></app-albums>
+<!--<app-navbar></app-navbar>-->
 
-<app-artists [artists]="searchResult?.artists"></app-artists>
+<nav class="app-navbar initialized minimized">
+  <div class="app-logo">
+    <a href="">
+      <i class="fa fa-spotify"></i> Spotify browser
+    </a>
+  </div>
+  <div class="app-search">
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="search..."/>
+    <button type="button"
+            class="input-clear"
+            tabindex="-1">
+      <i class="fa fa-times"></i>
+    </button>
+  </div>
+</nav>
 
-<app-tracks [tracks]="searchResult?.tracks"></app-tracks>
+<app-albums [albums]="(searchResult | async)?.albums"></app-albums>
+
+<app-artists [artists]="(searchResult | async)?.artists"></app-artists>
+
+<app-tracks [tracks]="(searchResult | async)?.tracks"></app-tracks>
