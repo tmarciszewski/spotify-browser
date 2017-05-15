@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {TrackList} from "../track-list";
 
 @Component({
   selector: 'app-tracks',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TracksComponent implements OnInit {
 
+  @Input() tracks: TrackList;
   constructor() { }
 
   ngOnInit() {

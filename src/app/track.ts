@@ -1,3 +1,9 @@
+import {Album} from "./album";
+import {Artist} from "./artist";
 export interface Track {
-  total: number;
+  id: string;
+  name: string;
+  duration_ms: number;
+  album: Album;
+  artists: Artist[];
 }

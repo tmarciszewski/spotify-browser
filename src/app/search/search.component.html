@@ -1,7 +1,6 @@
 <app-navbar></app-navbar>
+<app-albums [albums]="searchResult?.albums"></app-albums>
 
-<app-albums></app-albums>
+<app-artists [artists]="searchResult?.artists"></app-artists>
 
-<app-artists></app-artists>
-
-<app-tracks></app-tracks>
+<app-tracks [tracks]="searchResult?.tracks"></app-tracks>

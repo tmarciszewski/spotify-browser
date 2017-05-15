@@ -1,9 +1,10 @@
-import {Album} from "./album";
-import {Artist} from "./artist";
-import {Track} from "./track";
+
+import {AlbumList} from "./album-list";
+import {ArtistList} from "./artist-list";
+import {TrackList} from "./track-list";
 
 export interface SearchResult {
-  albums: Album[];
-  artists: Artist[];
-  tracks: Track[];
+  albums: AlbumList;
+  artists: ArtistList;
+  tracks: TrackList;
 }

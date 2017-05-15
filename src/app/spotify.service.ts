@@ -10,8 +10,8 @@ export class SpotifyService {
 
   constructor(private http: Http ) { }
   search(term: string): Observable<SearchResult> {
-    return this.http.get('https://api.spotify.com/v1/search?limit=10&q=m&type=album,artist,track')
-      .map(res => res.json() as SearchResult);
+    return this.http.get(`https://api.spotify.com/v1/search?limit=10&q=${term}&type=album,artist,track`)
+      .map(res => res.json());
   }
 
 }

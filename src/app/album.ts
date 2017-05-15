@@ -1,3 +1,7 @@
+import {CoverImage} from "./cover-image";
+
 export interface Album {
-  total: number;
+  id: string;
+  name: string;
+  images: CoverImage[];
 }
