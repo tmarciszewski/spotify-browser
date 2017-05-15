@@ -6,6 +6,7 @@
   <div class="tiles-container">
     <a
       *ngFor="let album of albums.items"
+      [routerLink]="['/album', album.id]"
       [style.background-image]="album.images.length > 1 ? 'url(' + album.images[1].url + ')' : ''"
       class="tile thumb-m">
     </a>

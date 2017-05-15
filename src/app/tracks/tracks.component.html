@@ -14,7 +14,7 @@
         </button>
       </td>
       <td><a href="album/index.html">{{track.name}}</a></td>
-      <td><a href="album/index.html">{{track.album.name}}</a></td>
+      <td *ngIf="track.album"><a [routerLink]="['/album', track.album.id]">{{track.album.name}}</a></td>
       <td>
         <a
           *ngFor="let artist of track.artists, last as last"

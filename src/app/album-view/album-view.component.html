@@ -1,0 +1,28 @@
+<header class="page-header" *ngIf="album">
+  <aside>
+    <div
+      class="thumb-l"
+      [style.background-image]="album.images.length > 0 ? 'url(' + album.images[0].url + ')' : ''"></div>
+
+    <ul class="thumbs-list">
+      <li *ngFor="let artist of album.artists">
+        <a href="../artist/index.html">
+          <div
+            class="thumb-s"
+            [style.background-image]="album.images.length > 1 ? 'url(' + album.images[1].url + ')' : ''"
+          ></div>
+          <p>{{artist.name}}</p>
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <section>
+    <header>
+      <h1>{{album.name}}</h1>
+      <h2>{{album.release_date | date : 'yyyy'}}</h2>
+    </header>
+
+    <app-tracks [tracks]="album.tracks"></app-tracks>
+  </section>
+</header>
