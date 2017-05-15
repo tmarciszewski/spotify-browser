@@ -12,6 +12,7 @@ import { SearchComponent } from './search/search.component';
 import {SpotifyService} from "./spotify.service";
 import { RouterModule } from '@angular/router';
 import { AlbumViewComponent } from './album-view/album-view.component';
+import { ArtistViewComponent } from './artist-view/artist-view.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AlbumViewComponent } from './album-view/album-view.component';
     AlbumsComponent,
     TracksComponent,
     SearchComponent,
-    AlbumViewComponent
+    AlbumViewComponent,
+    ArtistViewComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { AlbumViewComponent } from './album-view/album-view.component';
     RouterModule.forRoot([
       { path: '', redirectTo: '/search', pathMatch: 'full' },
       { path: 'search', component: SearchComponent },
-      { path: 'album/:id', component: AlbumViewComponent }
+      { path: 'album/:id', component: AlbumViewComponent },
+      { path: 'artist/:id', component: ArtistViewComponent }
     ])
   ],
   providers: [

@@ -1,15 +1,14 @@
-<section *ngIf="artists" class="tiles-section">
+<section *ngIf="artists && artists.items.length > 0" class="tiles-section">
   <header>
-    <h1>Artists</h1>
-    <h2>{{artists.total}} found</h2>
+    <h1>{{label}}</h1>
+    <h2 *ngIf="showFoundCount">{{artists.total}} found</h2>
   </header>
   <div class="tiles-container">
     <a
       *ngFor="let artist of artists.items"
-    [style.background-image]="artist.images.length > 1 ? 'url(' + artist.images[1].url + ')' : ''"
+      [routerLink]="['/artist', artist.id]"
+      [style.background-image]="artist.images.length > 1 ? 'url(' + artist.images[1].url + ')' : ''"
       class="tile thumb-m">
     </a>
-
-
   </div>
 </section>

@@ -6,7 +6,7 @@
 
     <ul class="thumbs-list">
       <li *ngFor="let artist of album.artists">
-        <a href="../artist/index.html">
+        <a [routerLink]="['/artist', artist.id]">
           <div
             class="thumb-s"
             [style.background-image]="album.images.length > 1 ? 'url(' + album.images[1].url + ')' : ''"

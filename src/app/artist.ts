@@ -4,4 +4,7 @@ export interface Artist {
   id: string;
   name: string;
   images: CoverImage[];
+  followers: {
+    total: number
+  };
 }

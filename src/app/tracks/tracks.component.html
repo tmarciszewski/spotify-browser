@@ -1,7 +1,7 @@
 <section *ngIf="tracks" class="table-section">
   <header>
-    <h1>Tracks</h1>
-    <h2>{{tracks.total}} found</h2>
+    <h1>{{label}}</h1>
+    <h2 *ngIf="showFoundCount">{{tracks.total}} found</h2>
   </header>
   <table class="tracks-table">
     <tbody>
@@ -13,12 +13,12 @@
           </div>
         </button>
       </td>
-      <td><a href="album/index.html">{{track.name}}</a></td>
+      <td><a>{{track.name}}</a></td>
       <td *ngIf="track.album"><a [routerLink]="['/album', track.album.id]">{{track.album.name}}</a></td>
       <td>
         <a
           *ngFor="let artist of track.artists, last as last"
-          href="artist/index.html">
+          [routerLink]="['/artist', artist.id]">
           <span>{{artist.name + (!last ? ', ' : '')}}</span>
         </a>
       </td>

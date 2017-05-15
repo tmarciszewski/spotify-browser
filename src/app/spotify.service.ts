@@ -6,6 +6,10 @@ import { Observable } from "rxjs/Observable";
 
 import {SearchResult} from "./search-result";
 import {Album} from "./album";
+import {Artist} from "./artist";
+import {ArtistList} from "./artist-list";
+import {TrackList} from "./track-list";
+import {AlbumList} from "./album-list";
 
 @Injectable()
 export class SpotifyService {
@@ -22,4 +26,27 @@ export class SpotifyService {
 
   }
 
+  getArtist(id: string): Observable<Artist> {
+    return this.http.get(`https://api.spotify.com/v1/artists?ids=${id}`)
+      .map(res => res.json().artists[0]);
+  }
+
+  getTopTracks(artistId: string): Observable<TrackList> {
+    return this.http.get(`https://api.spotify.com/v1/artists/${artistId}/top-tracks?country=US`)
+      .map(res => {
+        return { items: res.json().tracks }
+      });
+  }
+
+  getRelatedArtists(artistId: string): Observable<ArtistList> {
+    return this.http.get(`https://api.spotify.com/v1/artists/${artistId}/related-artists`)
+      .map(res => {
+        return { items: res.json().artists };
+      });
+  }
+
+  getAlbums(artistId: string): Observable<AlbumList> {
+    return this.http.get(`https://api.spotify.com/v1/artists/${artistId}/albums?limit=10`)
+      .map(res => res.json());
+  }
 }

@@ -1,0 +1,22 @@
+<div *ngIf="artist">
+  <header class="page-header">
+    <aside>
+      <div
+        class="thumb-l"
+        [style.background-image]="artist.images.length > 1 ? 'url(' + artist.images[1].url + ')' : ''"></div>
+    </aside>
+
+    <section>
+      <header>
+        <h1>{{artist.name}}</h1>
+        <h2>{{artist.followers.total}} followers</h2>
+      </header>
+
+      <app-tracks [label]="'Top tracks'" [showFoundCount]="false" [tracks]="topTracks" [maxTrackCount]="5"></app-tracks>
+    </section>
+  </header>
+
+  <app-albums [albums]="albums"></app-albums>
+
+  <app-artists [artists]="relatedArtists" [label]="'Related artists'" [showFoundCount]="false"></app-artists>
+</div>

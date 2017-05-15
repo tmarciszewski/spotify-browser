@@ -8,6 +8,8 @@ import {ArtistList} from "../artist-list";
 })
 export class ArtistsComponent implements OnInit {
   @Input() artists: ArtistList;
+  @Input() label = 'Artists'
+  @Input() showFoundCount = true;
 
   constructor() { }
 

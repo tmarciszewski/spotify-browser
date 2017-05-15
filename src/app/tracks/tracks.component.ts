@@ -9,6 +9,9 @@ import {TrackList} from "../track-list";
 export class TracksComponent implements OnInit {
 
   @Input() tracks: TrackList;
+  @Input() label = 'Tracks'
+  @Input() showFoundCount = true;
+  @Input() maxTrackCount = 10;
   constructor() { }
 
   ngOnInit() {
