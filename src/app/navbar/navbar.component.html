@@ -5,8 +5,7 @@
     </a>
   </div>
   <div class="app-search">
-    <input type="text"
-           placeholder="search..." >
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="search..."/>
     <button type="button"
             class="input-clear"
             tabindex="-1">

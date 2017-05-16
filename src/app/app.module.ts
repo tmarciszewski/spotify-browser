@@ -9,7 +9,7 @@ import { ArtistsComponent } from './artists/artists.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { TracksComponent } from './tracks/tracks.component';
 import { SearchComponent } from './search/search.component';
-import {SpotifyService} from "./spotify.service";
+import {SpotifyService} from './spotify.service';
 import { RouterModule } from '@angular/router';
 import { AlbumViewComponent } from './album-view/album-view.component';
 import { ArtistViewComponent } from './artist-view/artist-view.component';
@@ -30,8 +30,8 @@ import { ArtistViewComponent } from './artist-view/artist-view.component';
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: '/search', pathMatch: 'full' },
-      { path: 'search', component: SearchComponent },
+      { path: '', redirectTo: '/search/yolo', pathMatch: 'full' },
+      { path: 'search/:term', component: SearchComponent },
       { path: 'album/:id', component: AlbumViewComponent },
       { path: 'artist/:id', component: ArtistViewComponent }
     ])
