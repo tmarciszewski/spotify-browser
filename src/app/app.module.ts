@@ -13,6 +13,7 @@ import {SpotifyService} from './spotify.service';
 import { RouterModule } from '@angular/router';
 import { AlbumViewComponent } from './album-view/album-view.component';
 import { ArtistViewComponent } from './artist-view/artist-view.component';
+import { PlayerComponent } from './player/player.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ArtistViewComponent } from './artist-view/artist-view.component';
     TracksComponent,
     SearchComponent,
     AlbumViewComponent,
-    ArtistViewComponent
+    ArtistViewComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,

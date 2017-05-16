@@ -7,11 +7,7 @@
     <tbody>
     <tr *ngFor="let track of tracks.items">
       <td>
-        <button class="play-button">
-          <div class="icon-background">
-            <i class="fa fa-play"></i>
-          </div>
-        </button>
+        <app-player #ref (play)="play(ref, $event)" (stop)="stop(ref, $event)" [source]="track.preview_url"></app-player>
       </td>
       <td><a>{{track.name}}</a></td>
       <td *ngIf="track.album"><a [routerLink]="['/album', track.album.id]">{{track.album.name}}</a></td>

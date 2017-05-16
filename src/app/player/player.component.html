@@ -1,0 +1,6 @@
+  <audio #player [src]="source"></audio>
+  <button class="play-button" (click)="togglePlay()">
+    <div class="icon-background">
+      <i [ngClass]="{ 'fa-play': !isPlaying, 'fa-pause': isPlaying }" class="fa"></i>
+    </div>
+  </button>
