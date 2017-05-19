@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ArtistViewComponent } from './artist-view.component';
+import {ArtistViewComponent} from './artist-view.component';
 
 describe('ArtistViewComponent', () => {
   let component: ArtistViewComponent;

@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {SpotifyService} from '../spotify.service';
 import {SearchResult} from '../search-result';
 import {ActivatedRoute, Params} from '@angular/router';
-import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-search',

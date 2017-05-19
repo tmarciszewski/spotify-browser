@@ -1,13 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import {Router} from '@angular/router';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/distinctUntilChanged';
-
 
 const termCleanupRegExp = /[^a-zA-Z0-9 -]/g
 @Component({

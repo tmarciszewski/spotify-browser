@@ -1,6 +1,6 @@
 import {Component, Input, QueryList, ViewChildren} from '@angular/core';
-import {TrackList} from "../track-list";
-import {PlayerComponent} from "../player/player.component";
+import {TrackList} from '../track-list';
+import {PlayerComponent} from '../player/player.component';
 
 @Component({
   selector: 'app-tracks',
@@ -8,7 +8,6 @@ import {PlayerComponent} from "../player/player.component";
   styleUrls: ['./tracks.component.css']
 })
 export class TracksComponent {
-
   @Input() tracks: TrackList;
   @Input() label = 'Tracks'
   @Input() showFoundCount = true;

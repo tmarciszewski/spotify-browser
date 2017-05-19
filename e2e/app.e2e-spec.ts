@@ -1,4 +1,4 @@
-import { SpotifyBrowserAngularPage } from './app.po';
+import {SpotifyBrowserAngularPage} from './app.po';
 
 describe('spotify-browser-angular App', () => {
   let page: SpotifyBrowserAngularPage;

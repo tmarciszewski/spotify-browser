@@ -1,6 +1,6 @@
-import { TestBed, inject } from '@angular/core/testing';
+import {TestBed, inject} from '@angular/core/testing';
 
-import { SpotifyService } from './spotify.service';
+import {SpotifyService} from './spotify.service';
 
 describe('SpotifyService', () => {
   beforeEach(() => {

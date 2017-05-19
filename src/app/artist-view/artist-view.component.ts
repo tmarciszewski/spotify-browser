@@ -1,13 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {SpotifyService} from '../spotify.service';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {Artist} from '../artist';
 import {TrackList} from '../track-list';
 import {ArtistList} from '../artist-list';
 import {AlbumList} from '../album-list';
 import {Observable as RxObservable} from 'rxjs/Rx';
-
-import 'rxjs/add/observable/of';
 
 @Component({
   selector: 'app-artist-view',
@@ -26,20 +24,20 @@ export class ArtistViewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    const getArtistData = (id) => RxObservable.forkJoin(
+      this.spotify.getArtist(id),
+      this.spotify.getRelatedArtists(id),
+      this.spotify.getTopTracks(id),
+      this.spotify.getAlbums(id)
+    );
+
     this.route.params
-      .switchMap((params: Params) => {
-        return RxObservable.forkJoin(
-          this.spotify.getArtist(params['id']),
-          this.spotify.getRelatedArtists(params['id']),
-          this.spotify.getTopTracks(params['id']),
-          this.spotify.getAlbums(params['id'])
-        );
-      })
+      .switchMap((params) => getArtistData(params.id))
       .subscribe(([artist, relatedArtists, topTracks, albums]) => {
         this.artist = artist;
         this.relatedArtists = relatedArtists;
         this.topTracks = topTracks;
         this.albums = albums;
-      } );
+      });
   }
 }
