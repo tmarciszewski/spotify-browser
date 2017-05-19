@@ -1,4 +1,4 @@
-import {CoverImage} from "./cover-image";
+import {CoverImage} from './cover-image';
 
 export interface Artist {
   id: string;

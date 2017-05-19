@@ -1,5 +1,5 @@
-import {CoverImage} from "./cover-image";
-import {Artist} from "./artist";
+import {CoverImage} from './cover-image';
+import {Artist} from './artist';
 
 export interface Album {
   id: string;

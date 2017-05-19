@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import "rxjs/add/operator/do";
-import "rxjs/add/operator/map";
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/map';
 import { Http } from '@angular/http';
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs/Observable';
 
-import {SearchResult} from "./search-result";
-import {Album} from "./album";
-import {Artist} from "./artist";
-import {ArtistList} from "./artist-list";
-import {TrackList} from "./track-list";
-import {AlbumList} from "./album-list";
+import {SearchResult} from './search-result';
+import {Album} from './album';
+import {Artist} from './artist';
+import {ArtistList} from './artist-list';
+import {TrackList} from './track-list';
+import {AlbumList} from './album-list';
 
 @Injectable()
 export class SpotifyService {

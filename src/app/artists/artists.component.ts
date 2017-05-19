@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ArtistList} from "../artist-list";
+import {ArtistList} from '../artist-list';
 
 @Component({
   selector: 'app-artists',
