@@ -5,7 +5,7 @@
   </header>
   <table class="tracks-table">
     <tbody>
-    <tr *ngFor="let track of tracks.items">
+    <tr *ngFor="let track of tracks.items | slice:0:maxTrackCount">
       <td>
         <app-player #ref (play)="play(ref, $event)" (stop)="stop(ref, $event)" [source]="track.preview_url"></app-player>
       </td>
